@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { ListCounter } from './ListCounter';
+import { ListSearch } from './ListSearch';
+import { BuyingList } from './BuyingList';
+import { ListItem } from './ListItem';
+import { CreateItemButton } from './CreateItemButton';
+
+
+const items = [
+  { name: 'Cebolla', quantity: 1, measure: 'lbs', buyed: false},
+  { name: 'Tomate', quantity: 1, measure: 'kg', buyed: false},
+  { name: 'Zanahoria', quantity: 2, measure: 'lbs', buyed: false},
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <ListCounter />
+      <ListSearch />
+      <BuyingList>
+        {items.map((item) => (
+          <ListItem key = {item.name} text = {item.name} quantity = {item.quantity} measure = {item.measure} />
+        ))}
+      </BuyingList>
+      <CreateItemButton />
+    </React.Fragment>
   );
 }
 
