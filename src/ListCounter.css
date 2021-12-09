@@ -1,4 +1,15 @@
-.ListCounter {
-  font-size: 24px;
+h1 {
+  margin: 4px 0;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 45px;
+  text-align: center;
+}
+h2 {
+  width: 50%;
+  margin: 4px auto 12px auto;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
   text-align: center;
 }

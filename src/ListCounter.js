@@ -3,7 +3,10 @@ import './ListCounter.css';
 
 function ListCounter() {
   return (
-    <h2 className="ListCounter">Has comprado 2 de 3 items de tu lista</h2>
+    <>
+      <h1>Lista de Compras</h1>
+      <h2>Has comprado 2 de 3 items de tu lista</h2>
+    </>
   );
 
 }

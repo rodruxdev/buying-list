@@ -1,11 +1,17 @@
 import React from "react";
+import "./ListSearch.css";
+import searchSVG from "./search.svg"
 
 function ListSearch() {
   return (
-    <label>
-    Puedes buscar items en tu lista: 
-    <input type= "text" id = "input-search" placeholder = "Cebolla" />
-    </label>
+    <div className="ListSearch">
+      <div className="input-container">
+        <input type= "text" id = "input-search" placeholder = "Buscar" />
+        <label htmlFor="input-search">
+          <img src={searchSVG} alt="search"/>
+        </label>
+      </div>
+    </div>
   );
 
 }

@@ -1,9 +1,10 @@
 import React from "react";
+import "./BuyingList.css"
 
 function BuyingList(props){
   return(
     <section>
-      <ul>
+      <ul className="buyingList">
         {props.children}
       </ul>
     </section>
