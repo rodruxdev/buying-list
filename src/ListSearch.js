@@ -3,13 +3,17 @@ import "./ListSearch.css";
 import searchSVG from "./search.svg"
 
 function ListSearch() {
+  const [searchValue, setSearchValue] = React.useState('');
   const onSearchValueChange = (event) => {
     console.log(event.target.value);
+    setSearchValue(event.target.value);
   }
   return (
     <div className="ListSearch">
       <div className="input-container">
-        <input type= "text" id = "input-search" placeholder = "Buscar" 
+        <input type= "text" id = "input-search"
+        placeholder = "Buscar"
+        value={searchValue}
         onChange={onSearchValueChange}
         />
         <label htmlFor="input-search">
