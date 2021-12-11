@@ -3,10 +3,15 @@ import "./ListSearch.css";
 import searchSVG from "./search.svg"
 
 function ListSearch() {
+  const onSearchValueChange = (event) => {
+    console.log(event.target.value);
+  }
   return (
     <div className="ListSearch">
       <div className="input-container">
-        <input type= "text" id = "input-search" placeholder = "Buscar" />
+        <input type= "text" id = "input-search" placeholder = "Buscar" 
+        onChange={onSearchValueChange}
+        />
         <label htmlFor="input-search">
           <img src={searchSVG} alt="search"/>
         </label>
