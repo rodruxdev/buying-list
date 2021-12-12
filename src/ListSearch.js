@@ -2,8 +2,7 @@ import React from "react";
 import "./ListSearch.css";
 import searchSVG from "./search.svg"
 
-function ListSearch() {
-  const [searchValue, setSearchValue] = React.useState('');
+function ListSearch({searchValue, setSearchValue}) {
   const onSearchValueChange = (event) => {
     console.log(event.target.value);
     setSearchValue(event.target.value);

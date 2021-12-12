@@ -1,11 +1,11 @@
 import React from "react";
 import './ListCounter.css';
 
-function ListCounter() {
+function ListCounter({total, buyed}) {
   return (
     <>
       <h1>Lista de Compras</h1>
-      <h2>Has comprado 2 de 3 items de tu lista</h2>
+      <h2>Has comprado {buyed} de {total} items de tu lista</h2>
     </>
   );
 
