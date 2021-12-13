@@ -1,11 +1,5 @@
 import React from 'react';
-import './App.css';
-import { ListCounter } from './ListCounter';
-import { ListSearch } from './ListSearch';
-import { BuyingList } from './BuyingList';
-import { ListItem } from './ListItem';
-import { CreateItemButton } from './CreateItemButton';
-
+import { AppUI } from './AppUI'
 
 const defaultItems = [
   { name: 'Cebolla', quantity: 1, measure: 'lbs', buyed: false},
@@ -51,30 +45,15 @@ function App() {
   };
 
   return (
-    <React.Fragment>
-      <ListCounter
-        total = {totalItems}
-        buyed = {buyedItems}
-      />
-      <ListSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <BuyingList>
-        {searchedItems.map((item) => (
-          <ListItem 
-            key = {item.name}
-            text = {item.name}
-            quantity = {item.quantity}
-            measure = {item.measure}
-            buyed = {item.buyed}
-            toggleBuyed = {() => toggleBuyItem(item.name)}
-            onDelete = {() => deleteItem(item.name)}
-          />
-        ))}
-      </BuyingList>
-      <CreateItemButton />
-    </React.Fragment>
+    <AppUI
+      totalItems = {totalItems}
+      buyedItems = {buyedItems}
+      searchValue = {searchValue}
+      setSearchValue = {setSearchValue}
+      searchedItems = {searchedItems}
+      toggleBuyItem = {toggleBuyItem}
+      deleteItem = {deleteItem}
+    />
   );
 }
 
