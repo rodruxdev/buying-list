@@ -44,7 +44,7 @@ input::placeholder {
   color:#7D7D7D;
 }
 input:focus-visible {
-  outline: #188DD6 auto 1px;
+  outline-color: #188DD6;
 }
 label {
   display: inline-block;

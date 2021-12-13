@@ -6,6 +6,7 @@ import { BuyingList } from '../BuyingList';
 import { ListItem } from '../ListItem';
 import { CreateItemButton } from '../CreateItemButton';
 import { Modal } from "../Modal";
+import { ItemForm } from "../ItemForm";
 
 function AppUI() {
   const {
@@ -40,7 +41,7 @@ function AppUI() {
     </BuyingList>
     {!!openModal && (
       <Modal>
-        <p>{searchedItems[1]?.name}</p>
+        <ItemForm />
       </Modal>
     )}
 

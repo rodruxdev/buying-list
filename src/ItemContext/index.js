@@ -24,6 +24,17 @@ function ItemProvider(props) {
     })
   }
 
+  const addItem = (name) => {
+    const newItems = [...items];
+    newItems.push({
+      buyed: false,
+      name,
+      quantity: 1, 
+      measure: 'lbs',
+    })
+    saveItems(newItems);
+  }
+
   const toggleBuyItem = (text) => {
     const itemIndex = items.findIndex(item => item.name === text);
     const newItems = [...items];
@@ -46,6 +57,7 @@ function ItemProvider(props) {
       searchValue ,
       setSearchValue,
       searchedItems,
+      addItem,
       toggleBuyItem,
       deleteItem,
       openModal,
