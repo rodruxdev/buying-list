@@ -10,18 +10,33 @@ import { AppUI } from './AppUI'
 //   { name: 'Carne', quantity: 1, measure: 'kg', buyed: true},
 // ]
 
-function App() {
-  const localStorageItems = localStorage.getItem('ITEMS_V1');
-  let parsedItems
+function useLocalStorage(itemName, initialValue){
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItem
 
-  if (!localStorageItems) {
-    localStorage.setItem('ITEMS_V1', JSON.stringify([]));
-    parsedItems = [];
+  if (!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = [];
   } else {
-    parsedItems = JSON.parse(localStorageItems);
+    parsedItem = JSON.parse(localStorageItem);
   }
 
-  const [items, setItems]=React.useState(parsedItems)
+  const [item, setItem]=React.useState(parsedItem)
+
+  const saveItem = (newItem) => {
+    const stringifiedItem = JSON.stringify(newItem);
+    localStorage.setItem(itemName, stringifiedItem);
+    setItem(newItem);
+  }
+
+  return [
+    item,
+    saveItem
+  ];
+}
+
+function App() {
+  const [items, saveItems] = useLocalStorage('ITEMS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const buyedItems = items.filter(item => !!item.buyed).length;
@@ -38,12 +53,6 @@ function App() {
 
       return itemText.includes(searchText);
     })
-  }
-
-  const saveItems = (newItems) => {
-    const stringifiedItems = JSON.stringify(newItems);
-    localStorage.setItem('ITEMS_V1', stringifiedItems);
-    setItems(newItems);
   }
 
   const toggleBuyItem = (text) => {
