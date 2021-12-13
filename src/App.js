@@ -36,9 +36,23 @@ function App() {
     })
   }
 
+  const toggleBuyItem = (text) => {
+    const itemIndex = items.findIndex(item => item.name === text);
+    const newItems = [...items];
+    newItems[itemIndex].buyed = !newItems[itemIndex].buyed;
+    setItems(newItems);
+  };
+
+  const deleteItem = (text) => {
+    const itemIndex = items.findIndex(item => item.name === text);
+    const newItems = [...items];
+    newItems.splice(itemIndex, 1);
+    setItems(newItems);
+  };
+
   return (
     <React.Fragment>
-      <ListCounter 
+      <ListCounter
         total = {totalItems}
         buyed = {buyedItems}
       />
@@ -48,7 +62,15 @@ function App() {
       />
       <BuyingList>
         {searchedItems.map((item) => (
-          <ListItem key = {item.name} text = {item.name} quantity = {item.quantity} measure = {item.measure} buyed = {item.buyed}/>
+          <ListItem 
+            key = {item.name}
+            text = {item.name}
+            quantity = {item.quantity}
+            measure = {item.measure}
+            buyed = {item.buyed}
+            toggleBuyed = {() => toggleBuyItem(item.name)}
+            onDelete = {() => deleteItem(item.name)}
+          />
         ))}
       </BuyingList>
       <CreateItemButton />

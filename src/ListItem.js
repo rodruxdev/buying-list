@@ -8,18 +8,15 @@ function ListItem({
   text,
   quantity,
   measure,
-  buyed
+  buyed,
+  toggleBuyed,
+  onDelete
 }) {
-  const onComplete = () => {
-    alert(`Ya compraste ${quantity} ${measure} de ${text}`)
-  }
-  const onDelete = () => {
-    alert(`Borraste el item "${quantity} ${measure} de ${text}"`)
-  }
+
   return (
     <li className="list-item">
       <img src={cart} alt={`${quantity} ${measure} de ${text}`} className={`list-item--car-icon ${buyed && 'list-item--car-icon__buyed'}`}
-        onClick={onComplete}
+        onClick={toggleBuyed}
       />
       <p className={`list-item--text ${buyed && 'list-item--text__buyed'}`}>
         {`${quantity} ${measure} de ${text}`}
