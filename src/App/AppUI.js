@@ -5,6 +5,7 @@ import { ListSearch } from '../ListSearch';
 import { BuyingList } from '../BuyingList';
 import { ListItem } from '../ListItem';
 import { CreateItemButton } from '../CreateItemButton';
+import { Modal } from "../Modal";
 
 function AppUI() {
   const {
@@ -13,6 +14,8 @@ function AppUI() {
     searchedItems,
     toggleBuyItem,
     deleteItem,
+    openModal,
+    setOpenModal,
   } = React.useContext(ItemContext);
   return (
   <React.Fragment>
@@ -37,7 +40,15 @@ function AppUI() {
       ))}
     </BuyingList>
     
-    <CreateItemButton />
+    {!!openModal && (
+      <Modal>
+        <p>{searchedItems[1]?.name}</p>
+      </Modal>
+    )}
+
+    <CreateItemButton 
+      setOpenModal = {setOpenModal}
+    />
   </React.Fragment>
   );
 }
