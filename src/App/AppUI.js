@@ -15,7 +15,6 @@ function AppUI() {
     toggleBuyItem,
     deleteItem,
     openModal,
-    setOpenModal,
   } = React.useContext(ItemContext);
   return (
   <React.Fragment>
@@ -39,16 +38,13 @@ function AppUI() {
         />
       ))}
     </BuyingList>
-    
     {!!openModal && (
       <Modal>
         <p>{searchedItems[1]?.name}</p>
       </Modal>
     )}
 
-    <CreateItemButton 
-      setOpenModal = {setOpenModal}
-    />
+    <CreateItemButton />
   </React.Fragment>
   );
 }

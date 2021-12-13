@@ -1,14 +1,16 @@
 import React from "react";
+import { ItemContext } from "../ItemContext";
 import "./CreateItemButton.css";
 import crossSVG from "./cross.svg"
 
-function CreateItemButton(props) {
+function CreateItemButton() {
+  const { openModal, setOpenModal } = React.useContext(ItemContext);
   const onClickButton = () => {
-    props.setOpenModal(true);
+    setOpenModal(!openModal);
   }
   return (
     <button
-      className="button"
+      className={`button ${!!openModal && "button__active"}`}
       type = "button"
       onClick={onClickButton}
       >
