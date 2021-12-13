@@ -1,17 +1,27 @@
 import React from 'react';
 import { AppUI } from './AppUI'
 
-const defaultItems = [
-  { name: 'Cebolla', quantity: 1, measure: 'lbs', buyed: false},
-  { name: 'Tomate', quantity: 1, measure: 'kg', buyed: false},
-  { name: 'Zanahoria', quantity: 2, measure: 'lbs', buyed: true},
-  { name: 'Lechuga', quantity: 1, measure: 'unidad(es)', buyed: false},
-  { name: 'Manzana', quantity: 5, measure: 'unidad(es)', buyed: false},
-  { name: 'Carne', quantity: 1, measure: 'kg', buyed: true},
-]
+// const defaultItems = [
+//   { name: 'Cebolla', quantity: 1, measure: 'lbs', buyed: false},
+//   { name: 'Tomate', quantity: 1, measure: 'kg', buyed: false},
+//   { name: 'Zanahoria', quantity: 2, measure: 'lbs', buyed: true},
+//   { name: 'Lechuga', quantity: 1, measure: 'unidad(es)', buyed: false},
+//   { name: 'Manzana', quantity: 5, measure: 'unidad(es)', buyed: false},
+//   { name: 'Carne', quantity: 1, measure: 'kg', buyed: true},
+// ]
 
 function App() {
-  const [items, setItems]=React.useState(defaultItems)
+  const localStorageItems = localStorage.getItem('ITEMS_V1');
+  let parsedItems
+
+  if (!localStorageItems) {
+    localStorage.setItem('ITEMS_V1', JSON.stringify([]));
+    parsedItems = [];
+  } else {
+    parsedItems = JSON.parse(localStorageItems);
+  }
+
+  const [items, setItems]=React.useState(parsedItems)
   const [searchValue, setSearchValue] = React.useState('');
 
   const buyedItems = items.filter(item => !!item.buyed).length;
@@ -30,18 +40,24 @@ function App() {
     })
   }
 
+  const saveItems = (newItems) => {
+    const stringifiedItems = JSON.stringify(newItems);
+    localStorage.setItem('ITEMS_V1', stringifiedItems);
+    setItems(newItems);
+  }
+
   const toggleBuyItem = (text) => {
     const itemIndex = items.findIndex(item => item.name === text);
     const newItems = [...items];
     newItems[itemIndex].buyed = !newItems[itemIndex].buyed;
-    setItems(newItems);
+    saveItems(newItems);
   };
 
   const deleteItem = (text) => {
     const itemIndex = items.findIndex(item => item.name === text);
     const newItems = [...items];
     newItems.splice(itemIndex, 1);
-    setItems(newItems);
+    saveItems(newItems);
   };
 
   return (
