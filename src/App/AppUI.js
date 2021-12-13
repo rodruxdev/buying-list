@@ -7,6 +7,8 @@ import { CreateItemButton } from '../CreateItemButton';
 
 function AppUI(
   {
+    loading,
+    error,
     totalItems,
     buyedItems,
     searchValue ,
@@ -27,6 +29,10 @@ function AppUI(
       setSearchValue = {setSearchValue}
     />
     <BuyingList>
+      {error && <p>Hubo un error...</p>}
+      {loading && <p>Cargando la lista de compras...</p>}
+      {(!loading && !searchedItems.length) && <p>Crea el primer item para comprar</p>}
+
       {searchedItems.map((item) => (
         <ListItem
           key = {item.name}
