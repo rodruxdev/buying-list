@@ -4,6 +4,7 @@
   position: fixed;
   bottom: 15px;
   right: 15px;
+  z-index: 1;
   border-radius: 50%;
   border: 2px solid #FFFFFF;
   background: linear-gradient(180deg, #F2534B 0%, #188DD6 100%);
@@ -15,11 +16,11 @@
   animation: backspin 0.25s linear;
 }
 
-.button:active {
+.button__active {
   background: linear-gradient(225deg, #F4E5DF 9.69%, #9DE3F2 84.65%);
   border: none;
 }
-.button:active::before {
+.button__active::before {
   box-sizing: border-box;
   content: "";
   position: absolute;
@@ -37,7 +38,7 @@
   mask-composite: exclude;
 }
 
-.button:active .button--image {
+.button__active .button--image {
   animation: spin 0.25s linear;
   filter: invert(1);
   transform: rotate(45deg);

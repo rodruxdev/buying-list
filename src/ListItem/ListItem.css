@@ -1,13 +1,15 @@
 .list-item {
-  height: 50px;
+  min-height: 50px;
   width: 100%;
   padding: 15px 10px 15px 15px;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   justify-content: center;
+  align-items: center;
   position: relative;
   border-radius: 4px;
+  box-shadow: -3px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .list-item::before{
@@ -55,7 +57,7 @@
   margin: 0;
   margin-left: 15px;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 20px;
 }
 

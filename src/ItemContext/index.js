@@ -6,6 +6,7 @@ const ItemContext = React.createContext();
 function ItemProvider(props) {
   const {item: items, saveItem: saveItems, loading, error,} = useLocalStorage('ITEMS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
+  const [openModal, setOpenModal] = React.useState(false);
 
   const buyedItems = items.filter(item => !!item.buyed).length;
   const totalItems = items.length;
@@ -21,6 +22,17 @@ function ItemProvider(props) {
 
       return itemText.includes(searchText);
     })
+  }
+
+  const addItem = ({ quantity, measure, name}) => {
+    const newItems = [...items];
+    newItems.push({
+      quantity,
+      measure,
+      name,
+      buyed: false,
+    })
+    saveItems(newItems);
   }
 
   const toggleBuyItem = (text) => {
@@ -45,8 +57,11 @@ function ItemProvider(props) {
       searchValue ,
       setSearchValue,
       searchedItems,
+      addItem,
       toggleBuyItem,
       deleteItem,
+      openModal,
+      setOpenModal,
     }}>
       {props.children}
     </ItemContext.Provider>

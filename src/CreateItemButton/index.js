@@ -1,16 +1,18 @@
 import React from "react";
+import { ItemContext } from "../ItemContext";
 import "./CreateItemButton.css";
 import crossSVG from "./cross.svg"
 
 function CreateItemButton() {
-  const onClickButton = (msg) => {
-    alert(msg);
+  const { openModal, setOpenModal } = React.useContext(ItemContext);
+  const onClickButton = () => {
+    setOpenModal(!openModal);
   }
   return (
     <button
-      className="button"
+      className={`button ${!!openModal && "button__active"}`}
       type = "button"
-      onClick={() => onClickButton('Aqui debería ir el modal')}
+      onClick={onClickButton}
       >
       <img src={crossSVG} alt="Add new item" className="button--image"/>
     </button>
