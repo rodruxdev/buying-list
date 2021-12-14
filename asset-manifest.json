@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.ddb547c5.chunk.css",
-    "main.js": "/static/js/main.1ed3b409.chunk.js",
-    "main.js.map": "/static/js/main.1ed3b409.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.a4281965.js",
-    "runtime-main.js.map": "/static/js/runtime-main.a4281965.js.map",
-    "static/js/2.243a51ef.chunk.js": "/static/js/2.243a51ef.chunk.js",
-    "static/js/2.243a51ef.chunk.js.map": "/static/js/2.243a51ef.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.ddb547c5.chunk.css.map": "/static/css/main.ddb547c5.chunk.css.map",
-    "static/js/2.243a51ef.chunk.js.LICENSE.txt": "/static/js/2.243a51ef.chunk.js.LICENSE.txt",
-    "static/media/cart-check.19883558.svg": "/static/media/cart-check.19883558.svg",
-    "static/media/cross.f4cf7fee.svg": "/static/media/cross.f4cf7fee.svg",
-    "static/media/search.9c2249eb.svg": "/static/media/search.9c2249eb.svg",
-    "static/media/trash.53c48e82.svg": "/static/media/trash.53c48e82.svg"
+    "main.css": "/buying-list/static/css/main.ddb547c5.chunk.css",
+    "main.js": "/buying-list/static/js/main.1ed3b409.chunk.js",
+    "main.js.map": "/buying-list/static/js/main.1ed3b409.chunk.js.map",
+    "runtime-main.js": "/buying-list/static/js/runtime-main.e67e3eaa.js",
+    "runtime-main.js.map": "/buying-list/static/js/runtime-main.e67e3eaa.js.map",
+    "static/js/2.243a51ef.chunk.js": "/buying-list/static/js/2.243a51ef.chunk.js",
+    "static/js/2.243a51ef.chunk.js.map": "/buying-list/static/js/2.243a51ef.chunk.js.map",
+    "index.html": "/buying-list/index.html",
+    "static/css/main.ddb547c5.chunk.css.map": "/buying-list/static/css/main.ddb547c5.chunk.css.map",
+    "static/js/2.243a51ef.chunk.js.LICENSE.txt": "/buying-list/static/js/2.243a51ef.chunk.js.LICENSE.txt",
+    "static/media/cart-check.19883558.svg": "/buying-list/static/media/cart-check.19883558.svg",
+    "static/media/cross.f4cf7fee.svg": "/buying-list/static/media/cross.f4cf7fee.svg",
+    "static/media/search.9c2249eb.svg": "/buying-list/static/media/search.9c2249eb.svg",
+    "static/media/trash.53c48e82.svg": "/buying-list/static/media/trash.53c48e82.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a4281965.js",
+    "static/js/runtime-main.e67e3eaa.js",
     "static/js/2.243a51ef.chunk.js",
     "static/css/main.ddb547c5.chunk.css",
     "static/js/main.1ed3b409.chunk.js"
