@@ -24,13 +24,13 @@ function ItemProvider(props) {
     })
   }
 
-  const addItem = (name) => {
+  const addItem = ({ quantity, measure, name}) => {
     const newItems = [...items];
     newItems.push({
-      buyed: false,
+      quantity,
+      measure,
       name,
-      quantity: 1, 
-      measure: 'lbs',
+      buyed: false,
     })
     saveItems(newItems);
   }
