@@ -1,0 +1,19 @@
+.EmptyList {
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.EmptyList--image {
+  width: 60%;
+}
+
+.EmptyList--message {
+  font-size: 14px;
+  font-weight: normal;
+}

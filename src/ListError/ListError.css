@@ -1,0 +1,21 @@
+.ListError {
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ListError--image {
+  width: 60%;
+  object-fit: contain;
+}
+
+.ListError--message {
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+}

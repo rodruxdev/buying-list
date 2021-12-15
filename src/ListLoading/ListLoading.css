@@ -1,0 +1,58 @@
+.ListLoading {
+  width: 85%;
+  height: 400px;
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ListLoading--balls {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ball {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+#ball-1 {
+  background: #188DD6;
+  animation: load 1s linear infinite;
+}
+
+#ball-2 {
+  background: #188DD6;
+  animation: load 1s linear 0.1s infinite;
+}
+
+#ball-3 {
+  background: #188DD6;
+  animation: load 1s linear 0.2s infinite;
+}
+
+@keyframes load {
+  0%, 100% {
+    background-color: #188DD6;
+    transform: scale(10%, 10%);
+  }
+  25%, 75% {
+    background-color: #887090;
+    transform: scale(50%, 50%);
+  }
+  50% {
+    background-color: #F1544D;
+    transform: scale(100%, 100%);
+  }
+}
+
+.ListError--message {
+  font-size: 14px;
+  font-weight: normal;
+}

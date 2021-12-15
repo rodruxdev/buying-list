@@ -7,6 +7,9 @@ import { ListItem } from '../ListItem';
 import { CreateItemButton } from '../CreateItemButton';
 import { Modal } from "../Modal";
 import { ItemForm } from "../ItemForm";
+import { ListError } from "../ListError";
+import { ListLoading } from "../ListLoading";
+import { EmptyList } from "../EmptyList";
 
 function AppUI() {
   const {
@@ -23,9 +26,9 @@ function AppUI() {
     <ListSearch />
 
     <BuyingList>
-      {error && <p>Hubo un error...</p>}
-      {loading && <p>Cargando la lista de compras...</p>}
-      {(!loading && !searchedItems.length) && <p>Crea el primer item para comprar</p>}
+      {error && <ListError />}
+      {loading && <ListLoading />}
+      {(!loading && !searchedItems.length) && <EmptyList />}
 
       {searchedItems.map((item) => (
         <ListItem
