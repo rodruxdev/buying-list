@@ -17,7 +17,7 @@ function ItemProvider(props) {
     searchedItems = items
   } else {
     searchedItems = items.filter(item => {
-      const itemText = item.name.toLowerCase();
+      const itemText = `${item.quantity.toLowerCase()} ${item.measure.toLowerCase()} ${item.name.toLowerCase()}`;
       const searchText = searchValue.toLowerCase();
 
       return itemText.includes(searchText);

@@ -9,7 +9,7 @@ function ListLoading(){
         <div className="ball" id="ball-2"></div>
         <div className="ball" id="ball-3"></div>
       </div>
-      <p className="ListLoading-message">Tu lista de compras esta cargando...</p>
+      <p className="ListLoading--message">Tu lista de compras esta cargando...</p>
     </div>
   )
 }
