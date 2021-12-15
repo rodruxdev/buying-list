@@ -25,8 +25,12 @@ function ItemForm(){
 
   const onSubmit = (event) => {
     event.preventDefault();
-    addItem({ quantity: newItemQuantity, measure: newItemMeasure, name: newItemName });
-    setOpenModal(false);
+    if(newItemQuantity && newItemMeasure && newItemName){
+      addItem({ quantity: newItemQuantity, measure: newItemMeasure, name: newItemName });
+      setOpenModal(false);
+    } else {
+      alert("Llene todos los campos para agregar un item a la lista.")
+    }
   }
 
   const onCancel = () => {
@@ -55,7 +59,7 @@ function ItemForm(){
               list="measures"
               id="measure"
               onChange={onChangeMeasure}
-              placeholder="kgs"
+              placeholder="-medida-"
             />
             <datalist
               id="measures">
