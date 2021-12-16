@@ -1,0 +1,78 @@
+.icon--container {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon--svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon--svg__search {
+  width: 65%;
+  height: 65%;
+}
+
+.icon--container__trash:hover {
+  color: #F2534B;
+}
+
+.icon--container__trash:hover,
+.icon--container__cart:hover {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  15% {
+    transform: translate(-1px, -1px) rotate(-1deg);
+  }
+  35% {
+    transform: translate(-1px, 0px) rotate(1deg);
+  }
+  50% {
+    transform: translate(1px, 1px) rotate(0deg) scale(1px, 1px);
+  }
+  65% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  80% {
+    transform: translate(-1px, 1px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(-1px, 1px) rotate(0deg) scale(2px, 2px);
+  }
+}
+
+.icon--container__cross {
+  animation: backspin 0.25s linear;
+}
+
+.icon--container__cross-active {
+  animation: spin 0.25s linear;
+  transform: rotate(45deg);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes backspin {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

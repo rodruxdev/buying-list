@@ -1,7 +1,7 @@
 import React from "react";
+import { CartIcon } from "../ListIcon/CartIcon";
+import { TrashIcon } from "../ListIcon/TrashIcon";
 import "./ListItem.css";
-import cart from "./cart-check.svg";
-import trash from "./trash.svg";
 
 
 function ListItem({
@@ -15,14 +15,15 @@ function ListItem({
 
   return (
     <li className="list-item">
-      <img src={cart} alt={`${quantity} ${measure} de ${text}`} className={`list-item--car-icon ${buyed && 'list-item--car-icon__buyed'}`}
-        onClick={toggleBuyed}
+      <CartIcon
+        buyed={buyed}
+        onToggleBuyed={toggleBuyed}
       />
       <p className={`list-item--text ${buyed && 'list-item--text__buyed'}`}>
         {`${quantity} ${measure} de ${text}`}
       </p>
-      <img src={trash} alt="Eliminar item" className="list-item--trash-icon"
-        onClick={onDelete}
+      <TrashIcon
+        onDelete={onDelete}
       />
     </li>
   );

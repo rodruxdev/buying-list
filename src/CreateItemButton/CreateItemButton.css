@@ -4,22 +4,19 @@
   position: fixed;
   bottom: 15px;
   right: 15px;
+  display: grid;
+  place-content: center;
   z-index: 1;
   border-radius: 50%;
   border: 2px solid #FFFFFF;
   background: linear-gradient(180deg, #F2534B 0%, #188DD6 100%);
 }
 
-.button--image {
-  width: 20px;
-  height: 20px;
-  animation: backspin 0.25s linear;
-}
-
 .button__active {
   background: linear-gradient(225deg, #F4E5DF 9.69%, #9DE3F2 84.65%);
   border: none;
 }
+
 .button__active::before {
   box-sizing: border-box;
   content: "";
@@ -36,28 +33,4 @@
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
-}
-
-.button__active .button--image {
-  animation: spin 0.25s linear;
-  filter: invert(1);
-  transform: rotate(45deg);
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes backspin {
-  from {
-    transform: rotate(45deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
 }

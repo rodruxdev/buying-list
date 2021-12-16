@@ -1,7 +1,7 @@
 import React from "react";
 import { ItemContext } from "../ItemContext";
+import { ListIcon } from "../ListIcon";
 import "./ListSearch.css";
-import searchSVG from "./search.svg"
 
 function ListSearch() {
   const onSearchValueChange = (event) => {
@@ -19,7 +19,7 @@ function ListSearch() {
         onChange={onSearchValueChange}
         />
         <label htmlFor="input-search">
-          <img src={searchSVG} alt="search"/>
+          <ListIcon type="search" color={'red'}/>
         </label>
       </div>
     </div>
