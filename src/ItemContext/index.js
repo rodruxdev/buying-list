@@ -13,7 +13,7 @@ function ItemProvider(props) {
 
   let searchedItems = [];
 
-  if(searchValue.length < 1) {
+  if(searchValue && searchValue.length < 1) {
     searchedItems = items
   } else {
     searchedItems = items.filter(item => {
