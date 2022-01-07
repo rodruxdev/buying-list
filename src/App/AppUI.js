@@ -10,6 +10,7 @@ import { ItemForm } from "../ItemForm";
 import { ListError } from "../ListError";
 import { ListLoading } from "../ListLoading";
 import { EmptyList } from "../EmptyList";
+import { ListHeader } from "../ListHeader";
 
 function AppUI() {
   const {
@@ -19,11 +20,23 @@ function AppUI() {
     toggleBuyItem,
     deleteItem,
     openModal,
+    totalItems,
+    buyedItems,
+    searchValue,
+    setSearchValue,
   } = React.useContext(ItemContext);
   return (
   <React.Fragment>
-    <ListCounter />
-    <ListSearch />
+    <ListHeader>
+      <ListCounter
+        totalItems = {totalItems}
+        buyedItems = {buyedItems}
+      />
+      <ListSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
+    </ListHeader>
 
     <BuyingList>
       {error && <ListError />}

@@ -1,14 +1,11 @@
 import React from "react";
-import { ItemContext } from "../ItemContext";
 import { ListIcon } from "../ListIcon";
 import "./ListSearch.css";
 
-function ListSearch() {
+function ListSearch({searchValue, setSearchValue}) {
   const onSearchValueChange = (event) => {
-    console.log(event.target.value);
     setSearchValue(event.target.value);
   }
-  const {searchValue, setSearchValue} = React.useContext(ItemContext);
 
   return (
     <div className="ListSearch">
