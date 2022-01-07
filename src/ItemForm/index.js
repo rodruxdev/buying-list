@@ -1,15 +1,10 @@
 import React from "react";
-import { ItemContext } from "../ItemContext";
 import "./ItemForm.css"
 
-function ItemForm(){
+function ItemForm({ addItem, setOpenModal }){
   const [newItemName, setNewItemName] = React.useState('')
   const [newItemQuantity, setNewItemQuantity] = React.useState('')
   const [newItemMeasure, setNewItemMeasure] = React.useState('kgs')
-  const {
-    addItem,
-    setOpenModal,
-  } = React.useContext(ItemContext);
 
   const onChangeName = (event) => {
     setNewItemName(event.target.value);

@@ -1,10 +1,8 @@
 import React from "react";
-import { ItemContext } from "../ItemContext";
 import "./CreateItemButton.css";
 import { CrossIcon } from "../ListIcon/CrossIcon";
 
-function CreateItemButton() {
-  const { openModal, setOpenModal } = React.useContext(ItemContext);
+function CreateItemButton({ openModal, setOpenModal }) {
   const onClickButton = () => {
     setOpenModal(!openModal);
   }

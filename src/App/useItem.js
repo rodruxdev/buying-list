@@ -1,9 +1,8 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
-const ItemContext = React.createContext();
 
-function ItemProvider(props) {
+function useItem() {
   const {item: items, saveItem: saveItems, loading, error,} = useLocalStorage('ITEMS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
   const [openModal, setOpenModal] = React.useState(false);
@@ -49,7 +48,7 @@ function ItemProvider(props) {
     saveItems(newItems);
   };
   return (
-    <ItemContext.Provider value={{
+    {
       loading,
       error,
       totalItems,
@@ -62,10 +61,8 @@ function ItemProvider(props) {
       deleteItem,
       openModal,
       setOpenModal,
-    }}>
-      {props.children}
-    </ItemContext.Provider>
-  )
+    }
+  );
 }
 
-export { ItemContext, ItemProvider };
+export { useItem };
