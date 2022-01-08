@@ -32,12 +32,12 @@ function App() {
 
   return (
   <React.Fragment>
-    <ListHeader>
+    <ListHeader loading={loading} >
       <ListCounter
         totalItems = {totalItems}
         buyedItems = {buyedItems}
       />
-      <ListSearch
+     <ListSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
       />
