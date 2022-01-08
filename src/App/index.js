@@ -11,6 +11,7 @@ import { ListError } from "../ListError";
 import { ListLoading } from "../ListLoading";
 import { EmptyList } from "../EmptyList";
 import { ListHeader } from "../ListHeader";
+import { ChangeAlertWithStorageListener } from '../ChangeAlert';
 
 
 
@@ -27,7 +28,8 @@ function App() {
     searchValue,
     setSearchValue,
     addItem,
-    setOpenModal
+    setOpenModal,
+    sincronizeItem
   } = useItem();
 
   return (
@@ -80,6 +82,7 @@ function App() {
       openModal={openModal}
       setOpenModal={setOpenModal}
     />
+    <ChangeAlertWithStorageListener sincronize={sincronizeItem} />
   </React.Fragment>
   );
 }
