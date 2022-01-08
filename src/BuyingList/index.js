@@ -11,7 +11,7 @@ function BuyingList(props){
       {(!!props.totalItems && !props.searchedItems.length) && props.onEmptySearch(props.searchText)}
 
       <ul className="buyingList">
-      {props.searchedItems.map(renderFunc)}
+      {(!props.loading && !props.error) && props.searchedItems.map(renderFunc)}
       </ul>
     </section>
   );

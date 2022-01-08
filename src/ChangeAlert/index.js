@@ -7,7 +7,7 @@ function ChangeAlert({ show, toggleShow }) {
       <div>
         <p>Hubo cambios en los items</p>
         <button
-          onClick={() => toggleShow(false)}
+          onClick={() => toggleShow()}
         >
           volver a cargar la información
         </button>

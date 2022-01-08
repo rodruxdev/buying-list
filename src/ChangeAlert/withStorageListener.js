@@ -2,7 +2,7 @@ import React from "react";
 
 function withStorageListener(WrappedComponent) {
   return function WrappedComponentWithStorageListener(props){
-    const [stroageChange, setStorageChange] = React.useState(false);
+    const [storageChange, setStorageChange] = React.useState(false);
 
     window.addEventListener('storage', (change) => {
       if (change.key === 'ITEMS_V1') {
@@ -18,7 +18,7 @@ function withStorageListener(WrappedComponent) {
 
     return (
       <WrappedComponent
-        show={stroageChange}
+        show={storageChange}
         toggleShow={toggleShow}
       />
       )
