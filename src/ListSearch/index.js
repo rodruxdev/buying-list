@@ -2,7 +2,7 @@ import React from "react";
 import { ListIcon } from "../ListIcon";
 import "./ListSearch.css";
 
-function ListSearch({searchValue, setSearchValue}) {
+function ListSearch({searchValue, setSearchValue, loading}) {
   const onSearchValueChange = (event) => {
     setSearchValue(event.target.value);
   }
@@ -14,6 +14,7 @@ function ListSearch({searchValue, setSearchValue}) {
         placeholder = "Buscar"
         value={searchValue}
         onChange={onSearchValueChange}
+        disabled={loading}
         />
         <label htmlFor="input-search">
           <ListIcon type="search" color={'red'}/>

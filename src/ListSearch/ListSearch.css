@@ -40,6 +40,9 @@
   left: 0;
   background: transparent;
 }
+.input-container input:disabled{
+  opacity: 25%;
+}
 .input-container input::placeholder {
   color:#7D7D7D;
 }

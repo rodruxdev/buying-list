@@ -32,23 +32,30 @@ function App() {
 
   return (
   <React.Fragment>
-    <ListHeader>
+    <ListHeader loading={loading} >
       <ListCounter
         totalItems = {totalItems}
         buyedItems = {buyedItems}
       />
-      <ListSearch
+     <ListSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
       />
     </ListHeader>
 
-    <BuyingList>
-      {error && <ListError />}
-      {loading && <ListLoading />}
-      {(!loading && !searchedItems.length) && <EmptyList />}
-
-      {searchedItems.map((item) => (
+    <BuyingList
+      error={error}
+      loading={loading}
+      searchedItems={searchedItems}
+      totalItems={totalItems}
+      searchText={searchValue}
+      onError={() => <ListError />}
+      onLoading={() => <ListLoading />}
+      onEmpty={() => <EmptyList />}
+      onEmptySearch={
+        (searchText) => <p>No hay resultados para {searchText}</p>
+      }
+      render={(item) => (
         <ListItem
           key = {item.name}
           text = {item.name}
@@ -57,9 +64,9 @@ function App() {
           buyed = {item.buyed}
           toggleBuyed = {() => toggleBuyItem(item.name)}
           onDelete = {() => deleteItem(item.name)}
-        />
-      ))}
-    </BuyingList>
+        />)}
+    />
+
     {!!openModal && (
       <Modal>
         <ItemForm
