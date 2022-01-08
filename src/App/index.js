@@ -11,7 +11,7 @@ import { ListError } from "../ListError";
 import { ListLoading } from "../ListLoading";
 import { EmptyList } from "../EmptyList";
 import { ListHeader } from "../ListHeader";
-import { ChangeAlertWithStorageListener } from '../ChangeAlert';
+import { ChangeAlert } from '../ChangeAlert';
 
 
 
@@ -82,7 +82,7 @@ function App() {
       openModal={openModal}
       setOpenModal={setOpenModal}
     />
-    <ChangeAlertWithStorageListener sincronize={sincronizeItem} />
+    <ChangeAlert sincronize={sincronizeItem} />
   </React.Fragment>
   );
 }
