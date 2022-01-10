@@ -3,7 +3,7 @@ import { useLocalStorage } from "./useLocalStorage";
 
 
 function useItem() {
-  const {item: items, saveItem: saveItems, loading, error,} = useLocalStorage('ITEMS_V1', []);
+  const {item: items, saveItem: saveItems, sincronizeItem, loading, error,} = useLocalStorage('ITEMS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
   const [openModal, setOpenModal] = React.useState(false);
 
@@ -61,6 +61,7 @@ function useItem() {
       deleteItem,
       openModal,
       setOpenModal,
+      sincronizeItem,
     }
   );
 }
