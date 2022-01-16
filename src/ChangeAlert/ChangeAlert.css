@@ -1,3 +1,4 @@
+/* Estilos del fondo de la notificacion */
 .bkg-notification {
   position: absolute;
   left: 0;
@@ -30,6 +31,7 @@
   text-align: center;
 }
 
+/* Estilos para el boton de la notificacion */
 .notification--button {
   min-width: 75%;
   height: 40px;

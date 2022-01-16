@@ -14,6 +14,7 @@ h2 {
   text-align: center;
 }
 
+/* Opacidad baja para la carga de items */
 .ListCounter--loading {
   opacity: 25%;
 }

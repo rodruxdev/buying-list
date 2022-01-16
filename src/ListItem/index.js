@@ -3,7 +3,7 @@ import { CartIcon } from "../ListIcon/CartIcon";
 import { TrashIcon } from "../ListIcon/TrashIcon";
 import "./ListItem.css";
 
-
+// Componente para renderizar items.
 function ListItem({
   text,
   quantity,

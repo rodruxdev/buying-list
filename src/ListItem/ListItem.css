@@ -1,3 +1,4 @@
+/* Contenedor de items y borde con gradiente */
 .list-item {
   min-height: 50px;
   width: 100%;
@@ -31,6 +32,7 @@
   mask-composite: exclude;
 }
 
+/* Cambio de borde con gradiente para items en posicion par */
 .list-item:nth-child(2n)::before{
   background: linear-gradient(90deg, #188DD6 0%, #F2534B 100%) border-box;
   mask:

@@ -12,9 +12,12 @@ function useItem() {
 
   let searchedItems = [];
 
+  // Comprobamos si se realiza una busqueda.
   if(searchValue && searchValue.length < 1) {
+    // Mantenemos todos los items si no se realiza una busqueda.
     searchedItems = items
   } else {
+    //  Obtenemos los items que corresponen a la busqueda.
     searchedItems = items.filter(item => {
       const itemText = `${item.quantity.toLowerCase()} ${item.measure.toLowerCase()} ${item.name.toLowerCase()}`;
       const searchText = searchValue.toLowerCase();
@@ -23,6 +26,7 @@ function useItem() {
     })
   }
 
+  // Agregamos un nuevo item y lo mandamos a guardarse en Locale Storage
   const addItem = ({ quantity, measure, name}) => {
     const newItems = [...items];
     newItems.push({
@@ -34,6 +38,7 @@ function useItem() {
     saveItems(newItems);
   }
 
+  // Funcion para tachar o destachar un item de la lsita
   const toggleBuyItem = (text) => {
     const itemIndex = items.findIndex(item => item.name === text);
     const newItems = [...items];
@@ -41,6 +46,7 @@ function useItem() {
     saveItems(newItems);
   };
 
+  // Funcion para eliminar un item de la lista
   const deleteItem = (text) => {
     const itemIndex = items.findIndex(item => item.name === text);
     const newItems = [...items];

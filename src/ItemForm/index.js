@@ -20,6 +20,7 @@ function ItemForm({ addItem, setOpenModal }){
 
   const onSubmit = (event) => {
     event.preventDefault();
+    // Confirma que todos los campos esten llenos para crear un nuevo item.
     if(newItemQuantity && newItemMeasure && newItemName){
       addItem({ quantity: newItemQuantity, measure: newItemMeasure, name: newItemName });
       setOpenModal(false);
