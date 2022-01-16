@@ -2,6 +2,7 @@ import React from "react";
 import { useStorageListener } from "./useStorageListener";
 import "./ChangeAlert.css";
 
+// Componente de notificaciones en cambio de Local Storage
 function ChangeAlert({ sincronize }) {
   const { show, toggleShow } = useStorageListener(sincronize);
   if(show){

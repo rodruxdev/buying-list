@@ -12,6 +12,7 @@
   background: linear-gradient(180deg, #F2534B 0%, #188DD6 100%);
 }
 
+/* Estilos para el boton activado */
 .button__active {
   background: linear-gradient(225deg, #F4E5DF 9.69%, #9DE3F2 84.65%);
   border: none;

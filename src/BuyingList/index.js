@@ -2,7 +2,11 @@ import React from "react";
 import "./BuyingList.css"
 
 function BuyingList(props){
+  // Obtiene la funcion de render de children o de props.
   const renderFunc = props.children || props.render;
+
+  // Renderiza la carga, error, busqueda o los items de acuerdo
+  //  a las condicionales usando los function props.
   return(
     <section className="buyingList-container">
       {props.error && props.onError()}

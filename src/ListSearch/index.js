@@ -7,6 +7,7 @@ function ListSearch({searchValue, setSearchValue, loading}) {
     setSearchValue(event.target.value);
   }
 
+  // Se utilizan dos divs para crear el borde con gradiente.
   return (
     <div className="ListSearch">
       <div className="input-container">

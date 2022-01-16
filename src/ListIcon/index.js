@@ -5,9 +5,7 @@ import { BsCartCheck } from "react-icons/bs";
 import { BsTrash } from "react-icons/bs";
 import { BsPlusLg } from "react-icons/bs";
 
-
-
-
+// Componente para iconos con React Icons
 function ListIcon({ type, color, onClick, active }) {
   const iconTypes = {
     "cart": color => (

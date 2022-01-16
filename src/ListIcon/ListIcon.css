@@ -1,3 +1,4 @@
+/* Estilos generales para iconos */
 .icon--container {
   cursor: pointer;
   width: 20px;
@@ -12,15 +13,18 @@
   height: 100%;
 }
 
+/* Estilos icono de busqueda */
 .icon--svg__search {
   width: 65%;
   height: 65%;
 }
 
+/* Estilos icono de basura */
 .icon--container__trash:hover {
   color: #F2534B;
 }
 
+/* Animacion icono de basura y carrrito */
 .icon--container__trash:hover,
 .icon--container__cart:hover {
   animation: shake 0.5s;
@@ -50,6 +54,8 @@
   }
 }
 
+
+/* Estilos icono de cruz */
 .icon--container__cross {
   animation: backspin 0.25s linear;
 }

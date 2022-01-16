@@ -6,7 +6,7 @@ section {
   overflow-y: scroll;
 }
 
-section::-webkit-scrollbar { 
+section::-webkit-scrollbar {
   display: none;
 }
 

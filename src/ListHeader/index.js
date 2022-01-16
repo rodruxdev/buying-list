@@ -1,6 +1,7 @@
 import React from "react";
 
 function ListHeader({ children, loading }) {
+  // Este componente envía a los compontes hijos el props "loading"
   return (
     <header>
     {React.Children
