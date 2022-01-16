@@ -17,20 +17,28 @@ import { ChangeAlert } from '../ChangeAlert';
 
 function App() {
   const {
-    error,
+    state,
+    stateUpdaters
+  } = useItem();
+
+  const {
     loading,
-    searchedItems,
-    toggleBuyItem,
-    deleteItem,
-    openModal,
+    error,
     totalItems,
+    searchedItems,
     buyedItems,
-    searchValue,
+    searchValue ,
+    openModal,
+  } = state;
+
+  const {
     setSearchValue,
     addItem,
+    toggleBuyItem,
+    deleteItem,
     setOpenModal,
-    sincronizeItem
-  } = useItem();
+    sincronizeItem,
+  } = stateUpdaters;
 
   return (
   <React.Fragment>
@@ -39,7 +47,7 @@ function App() {
         totalItems = {totalItems}
         buyedItems = {buyedItems}
       />
-     <ListSearch
+    <ListSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
       />
