@@ -47,23 +47,27 @@ function useItem() {
     newItems.splice(itemIndex, 1);
     saveItems(newItems);
   };
-  return (
-    {
-      loading,
-      error,
-      totalItems,
-      buyedItems,
-      searchValue ,
-      setSearchValue,
-      searchedItems,
-      addItem,
-      toggleBuyItem,
-      deleteItem,
-      openModal,
-      setOpenModal,
-      sincronizeItem,
-    }
-  );
+
+  const state = {
+    loading,
+    error,
+    totalItems,
+    searchedItems,
+    buyedItems,
+    searchValue ,
+    openModal,
+  };
+
+  const stateUpdaters = {
+    setSearchValue,
+    addItem,
+    toggleBuyItem,
+    deleteItem,
+    setOpenModal,
+    sincronizeItem,
+  }
+
+  return { state, stateUpdaters };
 }
 
 export { useItem };
