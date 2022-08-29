@@ -6,11 +6,14 @@ Esta es una aplicación web que te permite guardar una lista de compras indicand
 
 Para ver la página web haz [click aqui](https://rodruxdev.github.io/buying-list/)
 
-## Funcionamiento y Limitaciones del Proyecto
+<img src="./public/preview.png" alt="Preview of the project" width="400">
 
-Muestra una lista de compras que se guarda en local storage del navegador. Se puede agregar items a la lista llenando un formulario con el botón de la parte inferior derecha. No se puede actualizar los elementos o reordenarlos. Cada item puede eliminarse haciendo click en el icono de basura. También puede tacharse o destacharse cada item haciendo click en el ícono del carrito de compras.
+## Características
 
-Por el momento el diseño solo esta optimizado para mobile.
+- Añadir elementos a la lista de compras con cantidad y unidad de medida.
+- Tachar elementos ya comprados de la lista.
+- Eliminar elementos de la lista.
+- Guardar elementos de la lista en Local Storage
 
 ## Instalación del Proyecto en Local
 
@@ -20,4 +23,23 @@ Por el momento el diseño solo esta optimizado para mobile.
 4. Inicia un servidor local del proyecto con el comando `npm run start`.
 5. Ingresa en tu navegador a la dirección indicada.
 
-Este proyecto es una adaptación de los proyectos de los cursos de ReactJS con [Platzi](https://platzi.com/).
+## Tecnologías
+
+Las tecnologías utilizadas en el proyecto:
+
+- React.js
+- JavaScript
+- CSS3 y HTML5
+
+## Recursos
+
+Este proyecto es una adaptación de los proyectos de los cursos de ReactJS con [Platzi](https://platzi.com/cursos/react/).
+
+## Licencia
+
+> Este proyecto esta bajo la licencia MIT
+> 
+
+## **Autor**
+
+Hecho con 💚 por [rodruxdev](https://twitter.com/rodruxdev)
